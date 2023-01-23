@@ -28,6 +28,7 @@ O que você precisa para instalar a aplicação:
 ## Autor
 
 - Gregore Gomes - [Perfil no GitHub](https://github.com/GregoreGomes)
+- Mathues Berghahn - [Perfil no GitHub](https://github.com/Matheus-Berghahn)
 
 ## Licença
 
