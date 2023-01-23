@@ -14,8 +14,8 @@ O que você precisa para instalar a aplicação:
 
 ### Instalação
 
-1. Clone o repositório: `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
-2. Entre na pasta do projeto: `cd nome-do-repositorio`
+1. Clone o repositório: `git clone https://github.com/seu-usuario/pageDropshipping.git`
+2. Entre na pasta do projeto: `cd pageDropshipping`
 3. Instale as dependências: `yarn` ou `npm install`
 4. Inicie a aplicação: `yarn start` ou `npm start`
 5. Acesse a aplicação em `http://localhost:3000`
