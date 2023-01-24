@@ -3,11 +3,14 @@ import Header from './Header';
 import Footer from './Header';
 
 function App() {
+
   return (
   <>
+  <div className='center'>
     <Header />
-      <div><p>teste</p> </div>
+      
     <Footer />
+    </div>
   </> 
   );
 }
