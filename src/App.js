@@ -1,18 +1,24 @@
 import './App.scss';
 import Header from './Header';
-import Footer from './Header';
+import Home from './Home';
+import Produtos from './Produtos';
 
-function App() {
+const App = () => {
+  const { pathname } = window.location;
+
+  let Component;
+  if (pathname === '/produtos') {
+    Component = Produtos;
+  } else {
+    Component = Home;
+  }
 
   return (
-  <>
-  <div className='center'>
-    <Header />
-      
-    <Footer />
-    </div>
-  </> 
+    <section>
+      <Header />
+      <Component />
+    </section>
   );
-}
+};
 
 export default App;

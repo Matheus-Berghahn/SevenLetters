@@ -1,9 +1,16 @@
-function Header() {
-
+const Header = () => {
   return (
-    <div><h1>teste</h1></div>
+    <header>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/produtos">Produtos</a>
+        </li>
+      </ul>
+    </header>
   );
-  
-}
+};
 
 export default Header;
