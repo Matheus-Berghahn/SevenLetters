@@ -1,15 +1,65 @@
 *{
-  color: white;
+  color: black;
 }
 
 .checkout{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  background-color:white;
 
-  .optionCheckout{
-    border: 1px solid white;
+  form{
+    background-color: white;
+    width: 80%;
+    padding: 2% 2%;
+
+    .info-left{ 
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .optionCheckout{
+        border: 1px solid #5c5c5c;
+        display: flex;
+        padding: 20px 3%;
+  
+        .radio{
+          margin-right: 10px;
+        }
+      }
+    }
+
+  }
+  .info-rigth{
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    background-color: #efefef;
+    width: 20%;
+    padding: 2% 2%;
+
+    .saparation::before{
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 1px;
+      background-color: #5c5c5ca3;
+    }
+    .contentBox{
+      padding: 15px 0;
+      display: flex;
+      flex-direction: column;
+      .labelQuant{
+        display: flex;
+        justify-content: space-between;
+      }
+      p{
+        padding: 5px 0;
+        justify-content: space-between;
+        span{
+          float: right;
+        }
+      }
+    }
   }
 }
