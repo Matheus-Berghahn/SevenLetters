@@ -1,23 +1,18 @@
 import './App.scss';
+import './Header.scss';
+
 import Header from './Header';
-import Home from './Home';
-import Produtos from './Produtos';
 
 const App = () => {
-  const { pathname } = window.location;
-
-  let Component;
-  if (pathname === '/produtos') {
-    Component = Produtos;
-  } else {
-    Component = Home;
-  }
-
   return (
-    <section>
-      <Header />
-      <Component />
-    </section>
+    <div>
+       <Header />
+      <div className='content'>
+        <div className='app'>
+          
+        </div>
+      </div>
+    </div>
   );
 };
 
