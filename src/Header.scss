@@ -2,10 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background-color: black;
   color: white;
   width: 100%;
+
+  img{
+    width: 130px;
+    padding: 20px 0;
+  }
   
   .max{
     max-width: 1200px;

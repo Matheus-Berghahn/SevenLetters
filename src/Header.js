@@ -1,13 +1,16 @@
 import './Header.scss';
+import LogoHeader from "./assets/images/logo1.png"
 
 function Header() {
+
+
   return (
     <header className="header">
       <div className='max'>
-        <h1 className="header-title">Meu Cabeçalho</h1>
+        <img src={LogoHeader} alt="LIVRO 1"/>
         <div className="header-right">
           <p className="faq">FAQ</p>
-          <a href='/#' className='btn btnHover'>COMPRAR</a>
+          <a href='/checkout' className='btn btnHover'>COMPRAR</a>
         </div>
       </div>
     </header>
