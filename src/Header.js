@@ -1,5 +1,5 @@
 import './Header.scss';
-import LogoHeader from "./assets/images/logo1.png"
+import LogoHeader from "./assets/images/logo.png"
 
 function Header() {
 
@@ -10,7 +10,9 @@ function Header() {
         <img src={LogoHeader} alt="LIVRO 1"/>
         <div className="header-right">
           <p className="faq">FAQ</p>
-          <a href='/checkout' className='btn btnHover'>COMPRAR</a>
+          <div className='middle'>
+            <a href='/checkout' className='btn btn1'>COMPRAR</a>
+          </div>
         </div>
       </div>
     </header>
