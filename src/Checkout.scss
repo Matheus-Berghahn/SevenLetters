@@ -1,0 +1,15 @@
+*{
+  color: white;
+}
+
+.checkout{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+
+  .optionCheckout{
+    border: 1px solid white;
+    display: flex;
+  }
+}
