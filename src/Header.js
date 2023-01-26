@@ -3,8 +3,8 @@ import LogoHeader from "./assets/images/logo.png"
 
 function Header() {
 
-
   return (
+    
     <header className="header">
       <div className='max'>
         <img src={LogoHeader} alt="LIVRO 1"/>

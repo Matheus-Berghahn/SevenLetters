@@ -4,6 +4,7 @@ import Header from './Header';
 import Content from './Content';
 import Checkout from './Checkout';
 
+
 const { pathname } = window.location;
 
   let Component;

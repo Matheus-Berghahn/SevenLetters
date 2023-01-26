@@ -15,35 +15,68 @@
   background-color: #0a0a0a;
 
   .contentOne{
-    padding-top: 5%;
+    padding-top: 10%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-    .contentOne_shape {
-     position: absolute;
-     height: 0;
-     width: 20%;   
-     right: 0; 
-     z-index: 1;
+      .contentOne_shape {
+      position: absolute;
+      width: 40%;   
+      right: 0; 
+      z-index: 1;
+      opacity: 1;
+      transform-origin: 70% 55%;
+      animation: anima_shape 200000ms ease-in-out 0ms infinite;
+    }
+
+    .contentOne_shape2{
+      position: absolute;
+      width: 40%;   
+      right: 0; 
+      z-index: 1;
+      opacity: 1;
+      transform-origin: 70% 55%;
+      animation: anima_shape 130000ms ease-in-out 0ms infinite;
+    }
+
+    @keyframes anima_shape {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      25% {
+      transform: translate(-30px, -80px) rotate(180deg) scale(1.1);
+      }
+      50% {
+        transform: rotate(360deg) scale(1.05);
+      }
+      75% {
+        transform:  rotate(180deg) scale(1.1);
+      }
+      100% {
+        transform: rotate(0deg) scale(1);     
+    }
   }
 
     .contentOne_leftSide {
+
       margin-top: 5%;
       user-select: none;
       float: left;
       width: 50%;
-      color: rgb(255, 255, 255);
+      
   }
 
     .contentOne_leftSide h2 {
+      color: white;
         font-size: 45px;
         margin-bottom: 30px;
     }
 
     .contentOne_leftSide p {
+      color: white;
         font-size: 20px;
         line-height: 150%;
     }
@@ -63,7 +96,7 @@
         font-family: "montserrat";
         text-decoration: none;
         margin: 50px 0;
-        border: 1px solid #ee4f00;
+        border: 1px solid #cf2700;
         padding: 18px 40px;
         text-transform: uppercase;
         overflow: hidden;
@@ -72,7 +105,7 @@
       }
       
       .contentOne_btn::before{
-        background-image: linear-gradient(90deg, #ff6e26, #ee4f00);
+        background-image: linear-gradient(90deg, #f46626, #cf2700);
         content: "";
         position: absolute;
         top: 0;
