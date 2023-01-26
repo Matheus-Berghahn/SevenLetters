@@ -21,6 +21,7 @@ const Checkout = () => {
   
   const handleSubmit = event => {
     event.preventDefault();
+    console.log(event.target.quant.value)
     // validar form
     const formData = new Form({
       name: event.target.name.value,
@@ -49,7 +50,7 @@ const Checkout = () => {
   const [selected, setSelected] = useState('yes');
   const handleChange = event => {
     setSelected(event.target.value);
-    console.log(event.target.value);
+
   };
 
   return (
@@ -68,6 +69,8 @@ const Checkout = () => {
             onChange={handleChange} >
             </input>
             <label htmlFor='card'>Cartão de Crédito</label>
+            <div>
+            </div>
           </div>
           <div className='optionCheckout'>
             <input  type="radio"
