@@ -1,9 +1,8 @@
 import './App.scss';
 import './Header.scss';
 import Header from './Header';
-import Content from './Content';
+import ContentMain from './ContentMain';
 import Checkout from './Checkout';
-
 
 const { pathname } = window.location;
 
@@ -12,7 +11,7 @@ const { pathname } = window.location;
   if (pathname === '/checkout') {
     Component = Checkout;
   }else {
-    Component = Content;
+    Component = ContentMain;
   }
 
 const App = () => {
@@ -21,7 +20,7 @@ const App = () => {
       <Header />
       <div className='content'>
         <div className='app'>
-          <Component />
+          <Component/>
         </div>
       </div>
     </div>
