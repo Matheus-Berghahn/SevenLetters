@@ -4,8 +4,9 @@ import './Checkout.scss';
 const produtos = {
   nome: "xicara",
   preco: 10500,
-  estoque: 10
+  estoque: 10,
 }
+
 
 
 const Checkout = () => {
@@ -105,3 +106,4 @@ const Checkout = () => {
 
   
 export default Checkout;
+
