@@ -1,5 +1,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #10110e;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to top right, #fd621a, #df2900);
+  border-radius: 80px ;
+  box-shadow: 10px 10px 22px black;
+  
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -9,19 +21,54 @@
   backface-visibility: hidden;
 }
 
+/*.teste{
+  position: absolute;
+      width: 100%;
+      left: 0;
+      top: 50%;
+      z-index: 2261;
+      opacity: 1;
+
+      img{
+        width: 100%;
+      }
+}*/
 .content{
   height: 3000px;
   width: 100%;
-  background-color: #0a0a0a;
+  background-color: #070606;
 
   .contentOne{
-    padding-top: 10%;
+    padding-top: 18%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
+  .shape_in{
+    animation: shape_in 3000ms cubic-bezier(.17,.67,.18,1) 0ms 1 normal forwards;
+  }
+  .shape2_in{
+    animation: shape2_in 2900ms cubic-bezier(.17,.67,.18,1) 0ms 1 normal forwards;
+  }
+
+  @keyframes shape_in{
+    0% {
+      transform: rotate(100deg) scale(0);
+    }
+    100% {
+      transform: rotate(0deg) scale(1);     
+  }
+  }
+  @keyframes shape2_in{
+    0% {
+      transform: rotate(-100deg) scale(0);
+    }
+    100% {
+      transform: rotate(0deg) scale(1);     
+  }
+  }
       .contentOne_shape {
       position: absolute;
       width: 40%;   
@@ -31,7 +78,6 @@
       transform-origin: 70% 55%;
       animation: anima_shape 200000ms ease-in-out 0ms infinite;
     }
-
     .contentOne_shape2{
       position: absolute;
       width: 40%;   
@@ -41,6 +87,7 @@
       transform-origin: 70% 55%;
       animation: anima_shape 130000ms ease-in-out 0ms infinite;
     }
+
 
     @keyframes anima_shape {
       0% {
@@ -58,23 +105,21 @@
       100% {
         transform: rotate(0deg) scale(1);     
     }
-  }
+    }
 
     .contentOne_leftSide {
-
       margin-top: 5%;
       user-select: none;
       float: left;
       width: 50%;
       
   }
-
     .contentOne_leftSide h2 {
       color: white;
         font-size: 45px;
         margin-bottom: 30px;
     }
-
+    
     .contentOne_leftSide p {
       color: white;
         font-size: 20px;
@@ -126,28 +171,23 @@
       
       .contentOne_btn1:hover{
         transition: border 2s ease;
-        border: 1px solid #0a0a0a;
-        color: #0a0a0a;
+        border: 1px solid #070606;
+        color: #070606;
       
       }
 }
-
     .contentOne_rightSide {
         float: left;
         width: 50%;
         user-select: none;
         padding-left: 20%;
     }
-
     .contentOne_rightSide img {
       width: 450px;
       position: relative;
       z-index: 2;
     }
-
-
 }
-
 
 .app{
   display: flex;

@@ -1,8 +1,23 @@
 import './Header.scss';
 import LogoHeader from "./assets/images/logo.png"
 
-function Header() {
 
+
+function Header() {
+  
+  //anima de Scroll Header 
+var headerScroll = document.querySelector('.header');
+
+window.addEventListener("scroll", function() {
+    var scroll = window.scrollY
+
+    if (scroll > 40) {
+        headerScroll.classList.add("scroll_black")
+    } else {
+        headerScroll.classList.remove("scroll_black")
+    }
+})
+ 
   return (
     
     <header className="header">
@@ -20,3 +35,5 @@ function Header() {
 }
 
 export default Header;
+
+
