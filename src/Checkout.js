@@ -4,15 +4,14 @@ import React, { useState } from 'react';
 import './Checkout.scss';
 
 const produtos = {
-  nome: "xicara",
-  preco: 10500,
+  nome: "corrente",
+  preco: 150,
   estoque: 10
 }
 
-
 const Checkout = () => {
   
-  mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true });
+  //mongoose.connect('mongodb+srv://admin:<0JPAfgyaaWR91Cm3>@cluster0.wbwmsjx.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true });
 
   const FormSchema = new mongoose.Schema({
     name: String,
@@ -122,4 +121,3 @@ const Checkout = () => {
 
   
 export default Checkout;
-
