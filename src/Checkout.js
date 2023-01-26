@@ -1,36 +1,52 @@
+import mongoose from 'mongoose';
+import axios from 'axios';
 import React, { useState } from 'react';
 import './Checkout.scss';
 
 const produtos = {
-  nome: "xicara",
-  preco: 10500,
+  nome: "corrente",
+  preco: 150,
   estoque: 10
 }
 
-
 const Checkout = () => {
+  
+  mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true });
 
-  // async function getData(){
-  //   await fetch(`https://api.github.com/users/GregoreGomes`)
-  //   .then((response) => {
-  //     console.log(response);
-  //     return response.json();
-  //   })
-  //   .then((json) => {
-  //     console.log(json);
-  //     return json;
-  //   })
-  // }
-  // console.log(getData())
+  const FormSchema = new mongoose.Schema({
+    name: String,
+    email: String
+  });
+  const Form = mongoose.model('Form', FormSchema);
   
   const handleSubmit = event => {
     event.preventDefault();
     // validar form
-    // mandar para api de pagamento
+    const formData = new Form({
+      name: event.target.name.value,
+      email: event.target.email.value
+    });
+    
+    // Salva os dados do formulário no banco de dados MongoDB
+    formData.save((error) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Form submitted successfully!');
+      }
+    });
+    
+    // Envia os dados do formulário para uma API externa
+    axios.post('https://example.com/api/form', formData)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   const [selected, setSelected] = useState('yes');
-  
   const handleChange = event => {
     setSelected(event.target.value);
     console.log(event.target.value);
@@ -42,7 +58,6 @@ const Checkout = () => {
       <form onSubmit={handleSubmit}>
         <div className='info-left'>
           <h2>Pagamento</h2>
-
           <div className='optionCheckout'>
             <input type="radio"
             className='radio'
@@ -77,6 +92,7 @@ const Checkout = () => {
             <label htmlFor='pix'>PIX</label>
           </div>
         </div>
+        <button type="submit">Comprar</button>
       </form>
         <div className='info-rigth'>
           <h2>Resumo</h2>
