@@ -1,15 +1,13 @@
 import './Header.scss';
 import LogoHeader from "./assets/images/logo.png"
 
-
-
 function Header() {
   
   //anima de Scroll Header 
 
   
   function handleScroll(e){
-    let scroll = window.scrollY
+    //let scroll = window.scrollY
     console.log(e.className)
   }
   window.addEventListener('scroll', handleScroll)
