@@ -5,7 +5,7 @@ import shape2 from "./assets/images/shape2.png"
 function Section1() {
 
   return (
-    <div className="section1">
+    <div className="section1 max-width">
     <div className="contentOne_shape ">
       <img className="shape_in" src={shape} alt="shape"/>
     </div>

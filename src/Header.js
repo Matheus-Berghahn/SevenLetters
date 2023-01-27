@@ -21,7 +21,7 @@ function Header() {
     // }
  
   return (
-    <header className="header" onScroll={handleScroll}>
+    <header className="header " onScroll={handleScroll}>
       <div className='max'>
         <img src={LogoHeader} alt="LIVRO 1"/>
         <div className="header-right">
