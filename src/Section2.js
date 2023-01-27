@@ -2,10 +2,10 @@ import produto from "./assets/images/produto.png"
 import shape from "./assets/images/shape.png"
 import shape2 from "./assets/images/shape2.png"
 
-function Section2() {
+function Section1() {
 
   return (
-    <div className="contentOne">
+    <div className="section1">
     <div className="contentOne_shape ">
       <img className="shape_in" src={shape} alt="shape"/>
     </div>
@@ -33,7 +33,7 @@ function Section2() {
   );
 }
 
-export default Section2;
+export default Section1;
 
 
 
