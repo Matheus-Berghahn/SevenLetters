@@ -1,0 +1,75 @@
+.section2{
+  padding-top: 10%;
+  
+  .txt_parallax {
+    margin-top: 10%;
+    width: 100%;
+}
+  .txt_parallax h2 {
+    color: white;
+    font-size: 45px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .txt_parallax p {
+    color: white;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    margin: 0 10%;
+  }
+  //botao
+    .contentTree_middle{
+      transform: translate(0%,0%);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    
+
+      .contentTree_btn{
+        width: 40%;
+        text-align: center;
+        position: relative;
+        color: white;
+        font-size: 30px;
+        font-family: "montserrat";
+        text-decoration: none;
+        margin: 10% 0;
+        border: 1px solid #cf2700;
+        padding: 18px 40px;
+        text-transform: uppercase;
+        overflow: hidden;
+        font-weight: bold;
+        backdrop-filter: blur(10px);
+
+      }
+      
+      .contentTree_btn::before{
+        background-image: linear-gradient(90deg, #f46626, #cf2700);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%,0%);
+        z-index: -1;
+        transition: all 0.3s ease;
+      }
+      
+      .contentTree_btn1::before{
+        width: 0%;
+        height: 100%;
+      }
+      
+      .contentTree_btn1:hover::before{
+        width: 100%;
+      }
+      .contentTree_btn1:hover{
+        transition: border 2s ease;
+        color: #070606;
+      }
+  }
+
+  
+}
