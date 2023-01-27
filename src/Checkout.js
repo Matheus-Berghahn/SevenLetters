@@ -55,7 +55,7 @@ const Checkout = () => {
 
   return (
 
-    <div className='checkout'>
+    <div className='checkout max-width'>
       <form onSubmit={handleSubmit}>
         <div className='info-left'>
           <h2>Pagamento</h2>
