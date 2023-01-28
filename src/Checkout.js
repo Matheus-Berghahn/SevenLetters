@@ -2,6 +2,11 @@ import mongoose from 'mongoose';
 import axios from 'axios';
 import React, { useState } from 'react';
 import './Checkout.scss';
+import { FaUser } from 'react-icons/fa';
+import { FaCreditCard } from 'react-icons/fa';
+import { MdLocationOn } from 'react-icons/md';
+
+import card01 from "./assets/images/card01.png";
 
 const produtos = {
   nome: "corrente",
@@ -58,18 +63,29 @@ const Checkout = () => {
     <div className='checkout max-width'>
       <form onSubmit={handleSubmit}>
         <div className='info-left'>
-          <h2>Pagamento</h2>
+          <div className='header-pay'>
+            <h2>Pagamento</h2>
+            <div className='icons-group'>
+              <h2 className='icon'><FaUser /></h2>
+              <h2 className='icon'><MdLocationOn /></h2>
+              <h2 className='icon'><FaCreditCard /></h2>
+              <span></span>
+            </div>
+          </div>
           <div className='optionCheckout'>
-            <input type="radio"
-            className='radio'
-            id="card"
-            name="choose"
-            value="card"
-            checked={selected === 'card'}
-            onChange={handleChange} >
-            </input>
-            <label htmlFor='card'>Cartão de Crédito</label>
             <div>
+              <input type="radio"
+              className='radio'
+              id="card"
+              name="choose"
+              value="card"
+              checked={selected === 'card'}
+              onChange={handleChange} >
+              </input>
+              <label htmlFor='card'>Cartão de Crédito</label>
+            </div>
+            <div>
+            <img src={card01} alt="card1"/>
             </div>
           </div>
           <div className='optionCheckout'>
