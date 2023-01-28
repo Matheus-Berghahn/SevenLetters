@@ -1,6 +1,7 @@
 import produto from "./assets/images/produto.png"
 import shape from "./assets/images/shape.png"
 import shape2 from "./assets/images/shape2.png"
+import './Section1.scss';
 
 function Section1() {
 
@@ -15,9 +16,7 @@ function Section1() {
 
     <div className="contentOne_leftSide">
       <h2>Lorem ipsum dolor sit amet</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non accumsan urna. 
-        In at enim lectus. Nunc consectetur ut urna vel mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Suspendisse non accumsan urna. In at enim lectus. Nunc consectetur ut urna vel mattis.
+      <p>A pomada muscular é a solução perfeita para aliviar a dor e a tensão nos músculos e articulações. Com uma fórmula potente e eficaz, ela penetra profundamente na pele para aliviar a dor e a inflamação, deixando seus músculos e articulações se sentindo relaxados e rejuvenescidos. Além disso, a pomada é fácil de usar e pode ser aplicada diretamente na área afetada, sem sujar as suas mãos. Experimente hoje e sinta a diferença em seus músculos e articulações. Adquira já a sua pomada muscular!
       </p>
 
       <div className='contentOne_middle'>

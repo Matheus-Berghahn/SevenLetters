@@ -2,13 +2,12 @@
   padding-top: 10%;
   
   .txt_parallax {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 100%;
 }
   .txt_parallax h2 {
     color: white;
     font-size: 45px;
-    margin-bottom: 30px;
     text-align: center;
   }
   .txt_parallax p {
@@ -26,23 +25,24 @@
       align-items: center;
       justify-content: center;
       
-    
-
       .contentTree_btn{
-        width: 40%;
+        width: 20%;
         text-align: center;
         position: relative;
         color: white;
         font-size: 30px;
         font-family: "montserrat";
         text-decoration: none;
-        margin: 10% 0;
+        margin: 5% 0;
         border: 1px solid #cf2700;
         padding: 18px 40px;
         text-transform: uppercase;
         overflow: hidden;
         font-weight: bold;
         backdrop-filter: blur(10px);
+        border-radius: 5px;
+        background: none;
+        cursor: pointer;
 
       }
       
