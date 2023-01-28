@@ -1,7 +1,7 @@
 import React from "react";
 import './Section2.scss';
 import {Parallax} from "react-parallax"
-import shape2 from "./assets/images/teste.png"
+import shape2 from "./assets/images/parallax.png"
 
 
 
