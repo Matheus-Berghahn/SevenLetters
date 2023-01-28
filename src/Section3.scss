@@ -1,4 +1,4 @@
-.produto_center{
+.center_shapes{
   padding: 200px 0;
   display: flex;
   align-items: center;
@@ -7,8 +7,88 @@
   width: 100%;
   background: radial-gradient(#0e0e0e, #070606);
   
-
-  img{
-    width: 500px;
+//tamanho dos 3 sahpes
+  .shape{
+    position: relative;
+    opacity: 0.6;
+    width: 400px;
+    height: 500px;
+    margin: 0 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 15px 8px black;
+    transition: 0.5s;
+    border-radius: 5px;
   }
+
+//estilizacao especifica dos shapes
+  .shape1{
+     background-image: url("./assets/images/shape1_img.png");
+     opacity: 0.6
+  }
+  .shape2{
+     background-image: url("./assets/images/shape2_img.png");
+     opacity: 0.6;
+  }
+  .shape3{
+     background-image: url("./assets/images/shape3_img.png");
+     opacity: 0.6;
+  }
+
+  .shape_txt{
+    display: none;
+    opacity: 1;
+    background: radial-gradient(#0e0e0e, #070606);
+    text-align: center;
+    transition: 1s;
+
+    h2{
+      color: white;
+      width: 100%;
+      font-size: 32px;
+      padding: 10%;
+    }
+    p{
+      color: white;
+      padding: 0 40px;
+      line-height: 1.6em;
+    
+
+      
+    }
+
+  }
+// botao
+    .contentOne_btn{
+      position: relative;
+      font-size: 20px;
+      font-family: "montserrat";
+      text-decoration: none;
+      background-image: linear-gradient(90deg, #f46626, #cf2700);
+      color: black;
+      padding: 18px 40px;
+      overflow: hidden;
+      font-weight:bold;
+      top: -25px;
+      border-radius: 5px;
+      cursor: pointer;
+      user-select:none;
+      border: none;
+      box-shadow: 2px 2px 7px black;
+    }
+    .contentOne_btn:hover{
+      background-color: #00000080;
+      background-image: none;
+      backdrop-filter: blur(2px);
+      color: #cf2700;
+      
+    }
+    .contentOne_btn:not(:hover){
+      transition: 0.3s;
+      background-image: linear-gradient(90deg, #f46626, #cf2700);
+      color: black;
+      
+    }
 }
