@@ -1,7 +1,42 @@
+.checkout{
+  padding: 30px 30px;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color:white;
+  
+  .align-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .buttons{
+    display: flex;
+    gap: 20px;
+    button{
+      padding: 10px;
+    }
+  }
+  .btnCheckout{
+    cursor: pointer;
+    border: 1px solid #f46626;
+    color: #f46626;
+    background-color: transparent;
+
+    &:disabled{
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+
 .icons-group{
   display: flex;
   justify-content: start;
-  align-items: center;
   gap: 20px;
   position: relative;
   
@@ -15,71 +50,40 @@
     justify-content: left;
   }
 }
-
-
-.checkout{
-  width: 100%;
+.info-left{
   display: flex;
-  padding-top: 110px;
-  justify-content: space-between;
-  background-color:white;
+  flex-direction: column;
+  width: 75%;
+}
+.info-rigth{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  background-color: #efefef;
+  width: 25%;
+  padding: 2% 2%;
 
-  form{
-    background-color: white;
+  .saparation::before{
+    content: '';
+    position: absolute;
     width: 80%;
-    padding: 2% 2%;
-
-    .info-left{ 
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      .header-pay{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .optionCheckout{
-        border: 1px solid #5c5c5c;
-        display: flex;
-        padding: 20px 3%;
-  
-        .radio{
-          margin-right: 10px;
-        }
-      }
-    }
-
+    height: 1px;
+    background-color: #5c5c5ca3;
   }
-  .info-rigth{
+  .contentBox{
+    padding: 15px 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    position: relative;
-    background-color: #efefef;
-    width: 20%;
-    padding: 2% 2%;
-
-    .saparation::before{
-      content: '';
-      position: absolute;
-      width: 80%;
-      height: 1px;
-      background-color: #5c5c5ca3;
-    }
-    .contentBox{
-      padding: 15px 0;
+    .labelQuant{
       display: flex;
-      flex-direction: column;
-      .labelQuant{
-        display: flex;
-        justify-content: space-between;
-      }
-      p{
-        padding: 5px 0;
-        justify-content: space-between;
-        span{
-          float: right;
-        }
+      justify-content: space-between;
+    }
+    p{
+      padding: 5px 0;
+      justify-content: space-between;
+      span{
+        float: right;
       }
     }
   }
