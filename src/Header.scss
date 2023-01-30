@@ -8,6 +8,7 @@
   width: 100%;
   padding: 5px 0;
   z-index: 1000;
+  background-color: #070606;
   
 
   img{
@@ -41,6 +42,7 @@
       letter-spacing: 3px;
       z-index: 5;
       position: relative;
+      user-select:none;
 
       //underline effect
       text-decoration: none;
@@ -58,11 +60,11 @@
   }
 }
 
-
 .middle{
   transform: translate(0%,0%);
 }
 .btn{
+  background: none;
   position: relative;
   display: flex;
   color: white;
@@ -76,6 +78,8 @@
   overflow: hidden;
   z-index: 15;
   border-radius: 5px;
+  user-select:none;
+  cursor: pointer;
       
 }
 
@@ -104,6 +108,9 @@
   border: 1px solid #070606;
   color: #070606;
   font-weight: bold;
-  
+}
+
+.btn_voltar{
+  display: none;
 }
 
