@@ -1,74 +1,46 @@
 .section4{
-  
-  .txt_parallax {
-    margin-top: 5%;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0;
+
+.shape_in{
+  animation: shape_in 3000ms cubic-bezier(.17,.67,.18,1) 0ms 1 normal forwards;
 }
-  .txt_parallax h2 {
-    color: white;
-    font-size: 45px;
-    text-align: center;
-  }
-  .txt_parallax p {
-    color: white;
-    font-size: 20px;
-    line-height: 150%;
-    text-align: center;
-    margin: 0 10%;
-  }
-  //botao
-    .contentTree_middle{
-      transform: translate(0%,0%);
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
-      .contentTree_btn{
-        width: 20%;
-        text-align: center;
-        position: relative;
-        color: white;
-        font-size: 30px;
-        font-family: "montserrat";
-        text-decoration: none;
-        margin: 5% 0;
-        border: 1px solid #cf2700;
-        padding: 18px 40px;
-        text-transform: uppercase;
-        overflow: hidden;
-        font-weight: bold;
-        backdrop-filter: blur(10px);
-        border-radius: 5px;
-        background: none;
-        cursor: pointer;
-
-      }
-      
-      .contentTree_btn::before{
-        background-image: linear-gradient(90deg, #f46626, #cf2700);
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(0%,0%);
-        z-index: -1;
-        transition: all 0.3s ease;
-      }
-      
-      .contentTree_btn1::before{
-        width: 0%;
-        height: 100%;
-      }
-      
-      .contentTree_btn1:hover::before{
-        width: 100%;
-      }
-      .contentTree_btn1:hover{
-        transition: border 2s ease;
-        color: #070606;
-      }
+  @keyframes shape_in{
+    0% {
+      transform: rotate(100deg) scale(0);
+    }
+    100% {
+      transform: rotate(0deg) scale(1);     
+    } 
   }
 
-  
+    .contentOne_shape {
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    animation: anima_shape 100000ms ease-in-out 0ms infinite;
+  }
+  @keyframes anima_shape {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+    transform: translate(-30px, -80px) rotate(180deg) scale(1.1);
+    }
+    50% {
+      transform: rotate(360deg) scale(1.05);
+    }
+    75% {
+      transform:  rotate(180deg) scale(1.1);
+    }
+    100% {
+      transform: rotate(0deg) scale(1);     
+  }
+  }
+
+  img{
+    z-index: 5;
+  }
 }

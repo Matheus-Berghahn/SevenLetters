@@ -1,33 +1,37 @@
+import React from "react";
 import './Section5.scss';
+import {Parallax} from "react-parallax"
+import shape2 from "./assets/images/parallax2.png"
+
+
 
 function Section5() {
-  const handleClick = (e) => {
-    const headers = document.querySelectorAll(".accordion-header");
-    headers.forEach((header) => {
-      if (header !== e.currentTarget) {
-        header.classList.remove("active");
-        const content = header.nextElementSibling;
-        content.classList.remove("open");
-      }
-    });
 
-    e.currentTarget.classList.toggle("active");
-    const content = e.currentTarget.nextElementSibling;
-    content.classList.toggle("open");
-  };
+  const scrollToClasseDeDestino = () => {
+    const classeDeDestino = document.getElementById("ancor_faq");
+    window.scrollTo({
+      top: classeDeDestino.offsetTop,
+      behavior: "smooth"
+    });
+  }
 
   return (
-    <div className="accordion">
-      <div className="accordion-header" onClick={handleClick}>Header 1</div>
-      <div className="accordion-content">
-        Content 1
-      </div>
-      <div className="accordion-header" onClick={handleClick}>Header 2</div>
-      <div className="accordion-content">
-        Content 2
-      </div>
+    <div className="section5">
+      <Parallax  className="bg_parallax" bgImage={ shape2 } strength={500}>
+      <div className="txt_parallax">
+          <h2>Ficou com alguma dúvida?</h2>
+
+        </div>
+        <div className='contentTree_middle'>
+          <button  onClick={scrollToClasseDeDestino} className='contentTree_btn contentTree_btn1'>FAQ</button>
+        </div>
+          
+      </Parallax>
     </div>
   );
 }
 
-export default Section5;
+export default Section5 ;
+
+
+

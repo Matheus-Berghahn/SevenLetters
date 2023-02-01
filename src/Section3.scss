@@ -42,7 +42,7 @@
     opacity: 1;
     background: radial-gradient(#0e0e0e, #070606);
     text-align: center;
-    transition: 1s;
+    transform: rotateY('180deg');
 
     h2{
       color: white;

@@ -1,37 +1,21 @@
-import React from "react";
+import produto from "./assets/images/produto2.png"
+import shape from "./assets/images/shape3.png"
+import shape2 from "./assets/images/shape4.png"
 import './Section4.scss';
-import {Parallax} from "react-parallax"
-import shape2 from "./assets/images/parallax2.png"
 
-
-
-function Section4() {
-
-  const scrollToClasseDeDestino = () => {
-    const classeDeDestino = document.getElementById("ancor_faq");
-    window.scrollTo({
-      top: classeDeDestino.offsetTop,
-      behavior: "smooth"
-    });
-  }
+function Section1() {
 
   return (
-    <div className="section4">
-      <Parallax  className="bg_parallax" bgImage={ shape2 } strength={500}>
-      <div className="txt_parallax">
-          <h2>Ficou com alguma dúvida?</h2>
-
-        </div>
-        <div className='contentTree_middle'>
-          <button  onClick={scrollToClasseDeDestino} className='contentTree_btn contentTree_btn1'>FAQ</button>
-        </div>
-          
-      </Parallax>
+    <div className="section4 max-width">
+    <div className="contentOne_shape ">
+      <img className="shape_in" src={shape} alt="shape"/>
     </div>
+      <img src={produto} alt="produto"/>
+  </div>
   );
 }
 
-export default Section4 ;
+export default Section1;
 
 
 
