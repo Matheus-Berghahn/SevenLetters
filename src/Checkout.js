@@ -3,6 +3,8 @@ import './Checkout.scss';
 import { FaUser } from 'react-icons/fa';
 import { FaCreditCard } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
+import { GrInstallOption } from 'react-icons/gr';
+
 import Footer from './Footer';
 
 
@@ -13,9 +15,9 @@ const produtos = [
 ];
 
 function Checkout() {
-  const [firstForm, setFirstForm] = useState(true);
+  const [firstForm, setFirstForm] = useState(false);
   const [secondForm, setSecondForm] = useState(false);
-  const [thirdForm, setThirdForm] = useState(false);
+  const [thirdForm, setThirdForm] = useState(true);
   
   const [data, setData] = useState({});
   //const [isDisabled, setIsDisabled] = useState(true);
@@ -56,7 +58,7 @@ function Checkout() {
   
 const options = [];
 produtos.forEach(produto => {
-  for (let i = 0; i <= produto.quantidade; i++) {
+  for (let i = 1; i <= produto.quantidade; i++) {
     options.push(<option key={i} value={i}>{i}</option>);
   }
 });
@@ -193,13 +195,12 @@ produtos.forEach(produto => {
             )}
             {thirdForm && (
               <form>
-                <label htmlFor='nome'>PAGAMENTO</label>
-                <input
-                  type="text"
-                  id='nome'
-                  name="nome"
-                  onChange={handleThirdForm}
-                />
+                <label className='selectPay' htmlFor='nome'>FORMA DE PAGAMENTO</label>
+                  <select  type="select" id="quant" name="quant" min="0" required>
+                  <option key='card' value='card'>cartão de crédito</option>
+                  <option key='boleto' value='boleto'>Boleto</option>
+                  <option key='pix' value='pix'>PIX</option>
+                </select>
                 <span>
                 <button type="submit">VOLTAR</button>
                 <button disabled={false} type="submit">CONFIRMAR DADOS</button>

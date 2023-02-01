@@ -3,6 +3,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+
+@media screen and ( max-width: 720px) {
+  .contentOne_leftSide{
+    width: 80% !important;
+  }
+  .contentOne_rightSide{
+    width: 80% !important;
+  }
+  .contentOne_rightSide img{
+    width: 100% !important;
+    overflow-x: hidden !important;
+    .contentOne_shape{
+      width: 20px !important;
+    }
+  }
+}
 
 .shape_in{
   animation: shape_in 3000ms cubic-bezier(.17,.67,.18,1) 0ms 1 normal forwards;
@@ -68,14 +85,12 @@
     float: left;
     width: 50%;
 }
-  .contentOne_leftSide h2 {
+  .contentOne_leftSide h1 {
     color: white;
-      font-size: 45px;
       margin-bottom: 30px;
   }
   .contentOne_leftSide p {
     color: white;
-      font-size: 20px;
       line-height: 150%;
   }
   //botao
@@ -84,12 +99,11 @@
     text-align: center;
     display: flex;
     align-items: center;
-    width: 40%;
+    width: 50%;
 
     .contentOne_btn{
       position: relative;
       color: white;
-      font-size: 24px;
       font-family: "montserrat";
       text-decoration: none;
       margin: 50px 0;

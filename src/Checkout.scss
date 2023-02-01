@@ -8,6 +8,13 @@
   background-color:white;
   font-family: 'Inter', sans-serif;
 
+  select{
+    background: url(./assets/images/arrow-select.png) no-repeat center right #FFF;
+    background-color: transparent;
+    appearance: none;
+    border: 1px solid #333;
+    font-size: 15px;
+  }
   
   .align-header{
     width: 100%;
@@ -15,7 +22,6 @@
     justify-content: space-between;
     align-items: center;
   }
-
 
   .forms{
     display: flex;
@@ -27,6 +33,13 @@
       label{
         font-size: 13px;
         padding-top: 10px;
+      }
+      select{
+        font-size: 13px;
+        margin-top: 10px;
+        padding: 20px 10px;
+        border: none;
+        
       }
       button{
         margin: 30px 10px 0 0;

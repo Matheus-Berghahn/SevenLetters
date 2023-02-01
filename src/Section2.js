@@ -19,7 +19,7 @@ function Section2() {
     <div className="section2">
       <Parallax  className="bg_parallax" bgImage={ shape2 } strength={500}>
         <div className="txt_parallax">
-          <h2>Quer conhecer mais sobre a pomada?</h2>
+          <h2>Quer conhecer mais sobre a pomada FisioFort?</h2>
 
         </div>
         <div className='contentTree_middle'>
