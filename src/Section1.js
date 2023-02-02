@@ -7,12 +7,6 @@ function Section1() {
 
   return (
     <div className="section1 max-width">
-    <div className="contentOne_shape ">
-      <img className="shape_in" src={shape} alt="shape"/>
-    </div>
-    <div className="contentOne_shape2 ">
-      <img className="shape2_in" src={shape2} alt="shape2"/>
-    </div>
 
     <div className="contentOne_leftSide">
       <h1><b>FisioFort:</b> a solução eficaz para aliviar dores musculares e articular</h1>
@@ -25,8 +19,16 @@ function Section1() {
     </div>
 
     <div className="contentOne_rightSide">
-        <img src={produto} alt="produto"/>
+      <img className="produto" src={produto} alt="produto"/>
+      <div className="contentOne_shape ">
+        <img className="shape_in" src={shape} alt="shape"/>
+      </div>
+      <div className="contentOne_shape2 ">
+        <img className="shape2_in" src={shape2} alt="shape2"/>
+      </div>
     </div>
+
+
     
   </div>
   );
