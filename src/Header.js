@@ -52,11 +52,13 @@ function Header() {
   return (
     <header ref={headerRef} className="header">
       <div className='max'>
-        <img src={LogoHeader} alt="LIVRO 1"/>
+        <div className='logo'>
+          <img src={LogoHeader} alt="LIVRO 1"/>
+        </div>
         <div className="header-right">
           <p onClick={scrollToClasseDeDestino} style={{display: shapeState.shape1}} className="faq">FAQ</p>
           <div className='middle'>
-            <button href='/checkout' style={{display: shapeState.shape1}} onClick={handleClickComprar} className='btn btn1'>COMPRAR</button>
+            <button href='/checkout' style={{display: shapeState.shape1}} onClick={handleClickComprar} className='btn btn1 btn_comprar'>COMPRAR</button>
             <button style={{display: shapeState.shape_txt}} onClick={handleClickVoltar} className='btn btn1 btn_voltar'>Voltar</button>
           </div>
         </div>
