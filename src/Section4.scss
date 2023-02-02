@@ -2,45 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 150px 0;
+  padding: 100px 0;
 
-.shape_in{
-  animation: shape_in 3000ms cubic-bezier(.17,.67,.18,1) 0ms 1 normal forwards;
-}
-  @keyframes shape_in{
-    0% {
-      transform: rotate(100deg) scale(0);
-    }
-    100% {
-      transform: rotate(0deg) scale(1);     
-    } 
+  iframe{
+    padding: 0 2%;
   }
 
-    .contentOne_shape {
-    position: absolute;
-    z-index: 1;
-    opacity: 1;
-    animation: anima_shape 100000ms ease-in-out 0ms infinite;
-  }
-  @keyframes anima_shape {
-    0% {
-      transform: rotate(0deg) scale(1);
-    }
-    25% {
-    transform: translate(-30px, -80px) rotate(180deg) scale(1.1);
-    }
-    50% {
-      transform: rotate(360deg) scale(1.05);
-    }
-    75% {
-      transform:  rotate(180deg) scale(1.1);
-    }
-    100% {
-      transform: rotate(0deg) scale(1);     
-  }
-  }
-
-  img{
-    z-index: 5;
-  }
 }
