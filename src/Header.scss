@@ -9,27 +9,6 @@
   padding: 5px 0;
   z-index: 1000;
   background-color: #070606;
-  
-  @media screen and ( max-width: 720px) {
-    .logo{
-      width: 50% !important;
-      display: flex;
-      justify-content: center;
-      padding-top: 20px;
-      img{
-        width: 130px;
-      }
-    }
-    .header-right{
-      width: 50% !important;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      .faq{
-        display: none !important;
-      }
-    }
-  }
 
   img{
     width: 200px;
@@ -133,5 +112,28 @@
 
 .btn_voltar{
   display: none;
+}
+
+// responsivo
+
+@media screen and ( max-width: 720px) {
+  .logo{
+    width: 50% !important;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    img{
+      width: 130px;
+    }
+  }
+  .header-right{
+    width: 50% !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .faq{
+      display: none !important;
+    }
+  }
 }
 

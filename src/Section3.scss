@@ -4,24 +4,25 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-wrap: wrap;
   width: 100%;
   background: radial-gradient(#0e0e0e, #070606);
   
 //tamanho dos 3 sahpes
-  .shape{
-    position: relative;
-    opacity: 0.6;
-    width: 400px;
-    height: 500px;
-    margin: 0 50px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 10px 15px 8px black;
-    transition: 0.5s;
-    border-radius: 5px;
-  }
+.shape{
+  position: relative;
+  opacity: 0.6;
+  width: 400px;
+  height: 500px;
+  margin: 0 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 10px 15px 8px black;
+  transition: 0.5s;
+  border-radius: 5px;
+}
 
 //estilizacao especifica dos shapes
   .shape1{
@@ -54,8 +55,6 @@
       padding: 0 40px;
       line-height: 1.6em;
     
-
-      
     }
 
   }
@@ -89,4 +88,13 @@
       color: black;
       
     }
+}
+
+//responsivo
+
+
+@media screen and ( max-width: 720px) {
+  .shape{
+    width: 100% !important;
+  }
 }

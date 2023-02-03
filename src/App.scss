@@ -50,3 +50,9 @@ p{
   margin: 0 auto;
   max-width: 1200px;
 }
+
+@media screen and ( max-width: 720px) {
+  .app{
+    padding-top: 127px;
+  }
+}
