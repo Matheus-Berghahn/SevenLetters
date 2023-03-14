@@ -6,6 +6,7 @@ import Checkout from './Checkout';
 
 const { pathname } = window.location;
 
+
   let Component;
 
   if (pathname === '/checkout') {
@@ -15,6 +16,7 @@ const { pathname } = window.location;
   }
 
 const App = () => {
+
   return (
     <div>
       <Header />
