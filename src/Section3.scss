@@ -11,9 +11,9 @@
 //tamanho dos 3 sahpes
 .shape{
   position: relative;
-  opacity: 0.6;
-  width: 400px;
-  height: 500px;
+  opacity: 1;
+  width: 440px;
+  height: 550px;
   margin: 0 50px;
   text-align: center;
   display: flex;
@@ -27,36 +27,112 @@
 //estilizacao especifica dos shapes
   .shape1{
      background-image: url("./assets/images/shape1_img.png");
-     opacity: 0.6
+     opacity: 1;
+     animation: imgs 1000ms ease-out 0ms 1 normal forwards;
   }
   .shape2{
      background-image: url("./assets/images/shape2_img.png");
-     opacity: 0.6;
+     opacity: 1;
+     animation: imgs 1000ms ease-out 0ms 1 normal forwards;
   }
   .shape3{
      background-image: url("./assets/images/shape3_img.png");
-     opacity: 0.6;
+     opacity: 1;
+     animation: imgs 1000ms ease-out 0ms 1 normal forwards;
   }
 
-  .shape_txt{
+  @keyframes imgs {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .shape_txt1{
     display: none;
     opacity: 1;
     background: radial-gradient(#0e0e0e, #070606);
     text-align: center;
     transform: rotateY('180deg');
+    height: 700px;
 
-    h2{
-      color: white;
-      width: 100%;
-      padding: 10%;
-    }
+
     p{
+      opacity: 0;
       color: white;
-      padding: 0 40px;
-      line-height: 1.6em;
-    
+      font-size: 12px;
+      padding: 50px 30px;
+      animation: txt 1000ms ease-out 400ms 1 normal forwards;
+      line-height: 1.5em;
+      letter-spacing: 0.5px;
     }
 
+    @keyframes txt {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  .shape_txt2{
+    display: none;
+    opacity: 1;
+    background: radial-gradient(#0e0e0e, #070606);
+    text-align: center;
+    transform: rotateY('180deg');
+    height: 700px;
+
+
+    p{
+      opacity: 0;
+      color: white;
+      font-size: 12px;
+      padding: 50px 30px;
+      animation: txt 1000ms ease-out 400ms 1 normal forwards;
+      line-height: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes txt {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  .shape_txt3{
+    display: none;
+    opacity: 1;
+    background: radial-gradient(#0e0e0e, #070606);
+    text-align: center;
+    transform: rotateY('180deg');
+    height: 700px;
+
+
+
+    p{
+      opacity: 0;
+      color: white;
+      font-size: 13px;
+      padding: 50px 30px;
+      animation: txt 1000ms ease-out 400ms 1 normal forwards;
+      line-height: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes txt {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
   }
 // botao
     .contentOne_btn{
@@ -74,6 +150,7 @@
       user-select:none;
       border: none;
       box-shadow: 2px 2px 7px black;
+      font-size: 15px;
     }
     .contentOne_btn:hover{
       background-color: #00000080;
