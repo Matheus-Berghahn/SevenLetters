@@ -1,243 +1,285 @@
-import React, { useState, useEffect } from 'react';
 import './Checkout.scss';
-import { FaUser } from 'react-icons/fa';
-import { FaCreditCard } from 'react-icons/fa';
-import { MdLocationOn } from 'react-icons/md';
-import { GrInstallOption } from 'react-icons/gr';
 
-import Footer from './Footer';
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import InputMask from "react-input-mask";
 
+import { createTransaction } from "../src/services/api";
 
-// import card01 from "./assets/images/card01.png";
+const Checkout = () => {
+  const { cartCode } = useParams();
 
-const produtos = [
-  { nome: 'A Game of Thrones', quantidade: 10 }
-];
+  const [customerName, setCustomerName] = useState("");
+  const [customerEmail, setCustomerEmail] = useState("");
+  const [customerMobile, setCustomerMobile] = useState("");
+  const [customerDocument, setCustomerDocument] = useState("");
+  const [billingAddress, setBillingAddress] = useState("");
+  const [billingNumber, setBillingNumber] = useState("");
+  const [billingNeighborhood, setBillingNeighborhood] = useState("");
+  const [billingCity, setBillingCity] = useState("");
+  const [billingState, setBillingState] = useState("");
+  const [billingZipCode, setBillingZipCode] = useState("");
+  const [creditCardNumber, setCreditCardNumber] = useState("");
+  const [creditCardExpiration, setCreditCardExpiration] = useState("");
+  const [creditCardHolderName, setCreditCardHolderName] = useState("");
+  const [creditCardCvv, setCreditCardCvv] = useState("");
+  const [installments, setInstallments] = useState("");
 
-function Checkout() {
-  const [firstForm, setFirstForm] = useState(false);
-  const [secondForm, setSecondForm] = useState(false);
-  const [thirdForm, setThirdForm] = useState(true);
-  
-  const [data, setData] = useState({});
-  //const [isDisabled, setIsDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [paymentResponse, setPaymentResponse] = useState();
 
-  //primeiro form
-
-  const handleFirstForm = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setData({ ...data, [e.target.name]: e.target.value });
-    //setIsDisabled(!Object.values(data).every(Boolean));
+
+    (async () => {
+      setLoading(true);
+
+      console.log('teste')
+
+      const response = await createTransaction({
+        cartCode: 200,
+        customerName,
+        customerEmail,
+        customerMobile,
+        customerDocument,
+        billingAddress,
+        billingNumber,
+        billingNeighborhood,
+        billingCity,
+        billingState,
+        billingZipCode,
+        creditCardNumber,
+        creditCardExpiration,
+        creditCardHolderName,
+        creditCardCvv,
+        installments: Number(installments),
+        paymentType: "credit_card",
+      });
+      setPaymentResponse(response.data.status)
+    })();
   };
 
-  const handleClickFirstForm = e => {
-    setSecondForm(true)
-    setFirstForm(false)
-  };
-
-    //segundo form
-
-  const handleSecondForm = e => {
-    e.preventDefault();
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
-
-  const handleClickSecondForm = e => {
-    setSecondForm(false)
-    setThirdForm(true)
-  };
-
-    //terceiro form
-
-  const handleThirdForm = e => {
-    e.preventDefault();
-    setData({...data, [e.target.name]: e.target.value});
-    console.log(secondForm)
-  };
-
-  
-const options = [];
-produtos.forEach(produto => {
-  for (let i = 1; i <= produto.quantidade; i++) {
-    options.push(<option key={i} value={i}>{i}</option>);
+  if (paymentResponse === "approved") {
+    return(
+      <div><h1>Pagamento aprovado</h1></div>
+    )
+  } else if( paymentResponse === "pending"){
+    return(
+      <div><h1>Boleto gerado</h1></div>
+    )
+  } else if(paymentResponse){
+    return(
+      <div><h1>Erro ao processar o pagamento</h1></div>
+    )
   }
-});
+  
 
-//const [apiData, setApi] = useState([]);
-
-// RODAR ESSA API NO SERVIDOR POR QUESTOES SE SEGURANCA
-
-// useEffect(() => {
-//   const fetchData = async () => {
-//     try {
-//       const response = await fetch(`https://viacep.com.br/ws/${data.CEP}/json/`);
-//       const apiData = await response.json();
-//       setApi(apiData);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-//   fetchData();
-// }, []);
-
-
-  return (
-      <>
-    <div className='max-width'>
-      <div className='checkout'>
-        <div className='info-left'>
-          <div className='align-header'>
-              <div>
-                <h2>INFORMAÇÕES PESSOAIS</h2>
-              </div>
-              <div className='icons-group'>
-                <h2 className='icon user'><FaUser /></h2>
-                <h2 className='icon pin'><MdLocationOn /></h2>
-                <h2 className='icon card'><FaCreditCard /></h2>
-                {firstForm && (
-                  <span></span>
-                )}
-                {secondForm && (
-                  <span style={{width: `63%`, transition: `all 0.5s ease`}}></span>
-                )}
-                {thirdForm && (
-                  <span style={{width: `100%`}}></span>
-                )}
-              </div>
-          </div>
-        
-          <div className='forms'>
-            {firstForm && (
-              <form>
-                <label htmlFor='nome'>NOME COMPLETO</label>
-                <input
-                  type="text"
-                  id='nome'
-                  name="nome"
-                  onChange={handleFirstForm}
-                />
-                <label htmlFor='email'>E-MAIL</label>
-                <input
-                  id='email'
-                  type="text"
-                  name="e-mail"
-                  onChange={handleFirstForm}
-                />
-                <label htmlFor='CPF'>CPF</label>
-                <input
-                  id='CPF'
-                  type="number"
-                  name="CPF"
-                  onChange={handleFirstForm}
-                />
-                <label htmlFor='telefone'>TELEFONE</label>
-                <input
-                  id='telefone'
-                  type="text"
-                  name="telefone"
-                  onChange={handleFirstForm}
-                />
-                <button onClick={handleClickFirstForm} disabled={false} type="submit">CONFIRMAR DADOS</button>
-              </form>
-            )}
-            {secondForm && (
-              <form>
-                <label htmlFor='cep'>CEP</label>
-                <input
-                  id='cep'
-                  type="text"
-                  name="CEP"
-                  placeholder="Ex. 12345000"
-                  onChange={handleSecondForm}
-                />
-                <label htmlFor='estado'>Estado</label>
-                <input
-                  id='estado'
-                  type="text"
-                  name="estado"
-                  onChange={handleSecondForm}
-                />
-                <label htmlFor='cidade'>Cidade</label>
-                <input
-                  id='cidade'
-                  type="text"
-                  name="cidade"
-                  onChange={handleSecondForm}
-                />
-                <label htmlFor='bairro'>Bairro</label>
-                <input
-                  id='bairro'
-                  type="text"
-                  name="bairro"
-                  onChange={handleSecondForm}
-                />
-                <label htmlFor='numero'>Número da residência</label>
-                <input
-                  id='numero'
-                  type="text"
-                  name="numero"
-                  placeholder="Número ou s/n"
-                  onChange={handleSecondForm}
-                />
-                <label htmlFor='complemento'>Complemento</label>
-                <input
-                  id='complemento'
-                  type="text"
-                  name="numero"
-                  placeholder="Apartamento, slaa, conjunto, edifício, andar, etc."
-                  onChange={handleSecondForm}
-                />
-                <span>
-                <button type="submit">VOLTAR</button>
-                <button onClick={handleClickSecondForm} type="submit">CONFIRMAR DADOS</button>
-                </span>
-              </form>
-            )}
-            {thirdForm && (
-              <form>
-                <label className='selectPay' htmlFor='nome'>FORMA DE PAGAMENTO</label>
-                  <select  type="select" id="quant" name="quant" min="0" required>
-                  <option key='card' value='card'>cartão de crédito</option>
-                  <option key='boleto' value='boleto'>Boleto</option>
-                  <option key='pix' value='pix'>PIX</option>
-                </select>
-                <span>
-                <button type="submit">VOLTAR</button>
-                <button disabled={false} type="submit">CONFIRMAR DADOS</button>
-                </span>
-              </form>
-            )}
-          </div>
-        </div>
-        <div className='info-rigth'>
-        <h2>DETALHES DA COMPRA</h2>
-        <span className='saparation'></span>
-        <div className='contentBox'>
-          <p>teste</p>
-          <div className='labelQuant'>
-            <label htmlFor='quant'>Quantidade</label>
-            <select type="select" id="quant" name="quant" min="0" required>
-            {options}
-            </select>
-          </div>
-          <p>teste</p>
-        </div>
-        <span className='saparation'></span>
-        <div className='contentBox'>
-          <p>Subtotal<span>{`R$`}</span></p>
-          <p>Frete<span>{`R$`}</span></p>
-        </div>
-        <span className='saparation'></span>
-        <div className='contentBox'>
-          <b><p>Total<span>{`R$`}</span></p></b>
-        </div>
+  return(
+    <form className="form" onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Nome</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={customerName}
+          onChange={(e) => setCustomerName(e.target.value)}
+        />
       </div>
-      </div>
-    </div>
-    <Footer />
-    </>
 
-  );
+      <div>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value={customerEmail}
+          onChange={(e) => setCustomerEmail(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="document">CPF</label>
+        <InputMask
+          mask="999.999.999-99"
+          type="text"
+          name="document"
+          id="document"
+          value={customerDocument}
+          onChange={(e) => setCustomerDocument(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="mobile">Número de telefone</label>
+        <InputMask
+          mask="(99) 99999-9999"
+          type="text"
+          name="mobile"
+          id="mobile"
+          value={customerMobile}
+          onChange={(e) => setCustomerMobile(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="address">Endereço</label>
+        <input
+          type="text"
+          name="address"
+          id="address"
+          value={billingAddress}
+          onChange={(e) => setBillingAddress(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="number">Número</label>
+        <input
+          type="text"
+          name="number"
+          id="number"
+          value={billingNumber}
+          onChange={(e) => setBillingNumber(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="neighborhood">Bairro</label>
+        <input
+          type="text"
+          name="neighborhood"
+          id="neighborhood"
+          value={billingNeighborhood}
+          onChange={(e) => setBillingNeighborhood(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="city">Cidade</label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          value={billingCity}
+          onChange={(e) => setBillingCity(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="state">Estado</label>
+        <select
+          name="state"
+          id="state"
+          value={billingState}
+          onChange={(e) => setBillingState(e.target.value)}>
+          <option>Selecione</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="zipcode">CEP</label>
+        <InputMask
+          mask="99999-999"
+          type="text"
+          name="zipcode"
+          id="zipcode"
+          value={billingZipCode}
+          onChange={(e) => setBillingZipCode(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="credit-card-holder-name">Titular do cartão</label>
+        <input
+          type="text"
+          name="credit-card-holder-name"
+          id="credit-card-holder-name"
+          value={creditCardHolderName}
+          onChange={(e) => setCreditCardHolderName(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="credit-card-holder-number">Número do cartão</label>
+        <InputMask
+          mask="9999.9999.9999.9999"
+          type="text"
+          name="credit-card-holder-number"
+          id="credit-card-holder-number"
+          value={creditCardNumber}
+          onChange={(e) => setCreditCardNumber(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="credit-card-holder-expiration">Validade do cartão (MM/AA)</label>
+        <InputMask
+          mask="99/99"
+          type="text"
+          name="credit-card-holder-expiration"
+          id="credit-card-holder-expiration"
+          value={creditCardExpiration}
+          onChange={(e) => setCreditCardExpiration(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="credit-card-holder-cvv">CVV</label>
+        <InputMask
+          mask="999"
+          type="text"
+          name="credit-card-holder-cvv"
+          id="credit-card-holder-cvv"
+          value={creditCardCvv}
+          onChange={(e) => setCreditCardCvv(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="instalments">Numero de parcelas</label>
+        <select
+          name="instalments"
+          id="instalments"
+          value={installments}
+          onChange={(e) => setInstallments(e.target.value)}>
+          <option>Selecione</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <button type="submit">CONFIRMAR COMPRA</button>
+    </form>
+  )
+
 }
 
 export default Checkout;
