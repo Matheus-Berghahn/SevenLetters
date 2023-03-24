@@ -1,14 +1,16 @@
 import './Checkout.scss';
+import cardsAcepts from "./assets/images/cards.png";
 
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import InputMask from "react-input-mask";
+import Cards from 'react-credit-cards-2';
+import 'react-credit-cards-2/es/styles-compiled.css';
 
 import { createTransaction } from "../src/services/api";
 
 const Checkout = () => {
-  const { cartCode } = useParams();
-  
+
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
   const [customerMobile, setCustomerMobile] = useState("");
@@ -59,6 +61,12 @@ const Checkout = () => {
     })();
   };
   
+  const [state, setState] = useState({
+    number: '',
+    expiry: '',
+    name: '',
+  });
+
   if (paymentResponse === "approved") {
     return(
       <div><h1>Pagamento aprovado</h1></div>
@@ -72,9 +80,9 @@ const Checkout = () => {
           <div><h1>Erro ao processar o pagamento</h1></div>
           )
         }
-        
-        
+       
         return(
+          <>
           <form className="form" onSubmit={handleSubmit}>
             <div className='form-payment'>
               <div className='main-form'>
@@ -226,22 +234,26 @@ const Checkout = () => {
                   
                 </div>
                 <div className='payment-form'>
-                  <h3>Dados de Pagamento</h3>
-                  <h4>Cartões aceitos:</h4>
-                  <div>
-
-                  </div>
-                  <div className='label-input'>
-                    <label htmlFor="credit-card-holder-name">Titular do cartão</label>
-                    <input
-                    type="text"
-                    name="credit-card-holder-name"
-                    id="credit-card-holder-name"
-                    value={creditCardHolderName}
-                    onChange={(e) => setCreditCardHolderName(e.target.value)}
-                    />
-                  </div>
+                <div id='PaymentForm'>
                 
+                
+
+                </div>
+                  <h3>Dados de Pagamento</h3>
+                  <div className='cards-image'>
+                    <h4>Cartões aceitos:</h4>
+                      <img src={cardsAcepts} alt="cards"/>
+                  </div>
+                 
+                  <div id='PaymentForm'>
+                    <div className='cardState'>
+                    <Cards
+                    number={creditCardNumber.replace(/[^?0-9]/g, "")}
+                    expiry={creditCardExpiration.replace(/[^?0-9]/g, "")}
+                    name={creditCardHolderName}
+                    />
+                    </div>
+                  </div>
                   <div className='label-input'>
                     <label htmlFor="credit-card-holder-number">Número do cartão</label>
                     <InputMask
@@ -253,6 +265,17 @@ const Checkout = () => {
                     onChange={(e) => setCreditCardNumber(e.target.value)}
                     />
                   </div>
+
+                  <div className='label-input'>
+                    <label htmlFor="credit-card-holder-name">Titular do cartão</label>
+                    <input
+                    type="text"
+                    name="credit-card-holder-name"
+                    id="credit-card-holder-name"
+                    value={creditCardHolderName}
+                    onChange={(e) => setCreditCardHolderName(e.target.value)}
+                    />
+                  </div>                  
 
                   <div className='englobe'>
 
@@ -302,9 +325,9 @@ const Checkout = () => {
               </div>
             </div>
           </form>
+          </>
           )
-          
-        }
-        
+         
+}
         export default Checkout;
         
