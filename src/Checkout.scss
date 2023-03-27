@@ -12,7 +12,9 @@
       gap: 40px;
       justify-content: center;
       display: flex;
+      flex-wrap: wrap;
       color: darkgrey;
+      white-space: nowrap;
       .form-top{
         display: flex;
         gap: 10px;
@@ -29,8 +31,6 @@
           width: 1.5rem;
         }
       }
-
-
 
       .payment-form{
         position: relative;
@@ -58,6 +58,8 @@
       .englobe{
         display: flex;
         justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
       }
       .label-input{
         display: flex;
@@ -71,6 +73,7 @@
         input, select{
           height: 30px;
           border-radius: 5px;
+          padding: 0 5%;
           border: 1px solid black;
         }
       }
@@ -89,6 +92,26 @@
           color: white;
           font-weight: bold;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .main-form{
+    padding: 2% 2% !important;
+    .billing-form{
+      width: 100% !important;
+      padding: 7% !important;
+    }
+    .payment-form{
+      width: 100% !important;
+      padding: 7% !important;
+    }
+  
+    .englobe{
+      .label-input{
+        width: 100% !important;
       }
     }
   }

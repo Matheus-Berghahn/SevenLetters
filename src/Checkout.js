@@ -10,7 +10,6 @@ import 'react-credit-cards-2/es/styles-compiled.css';
 import { BsPinMap } from "react-icons/bs";
 import { MdPayment } from "react-icons/md";
 
-
 import { createTransaction } from "../src/services/api";
 
 const Checkout = () => {
@@ -36,19 +35,24 @@ const Checkout = () => {
   
   // BUSCA CEP
 
-  const {register, setValue} = useForm();
+  const [register, setValue] = useState({
+    billingAddress: '',
+    billingCity: '',
+    billingState: '',
+    billingNeighborhood: '',
+  });
 
   const handleBuscaCep = (e) => {
     const cep = e.target.value.replace(/\D/g, '');
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
     .then(res => res.json()).then(data => {
-      setValue("billingAddress", data.logradouro);
-      setValue("billingNeighborhood", data.bairro);
-      setValue("billingCity", data.localidade);
-      setValue("billingState", data.uf);
+      setValue(prevRegister => ({...prevRegister, [billingAddress]: data.logradouro, [billingCity]: data.localidade, [billingState]: data.uf, [billingNeighborhood]: data.bairro}));
     })
   };
 
+  console.log(register)
+  
+  
    //
   
   const handleSubmit = (e) => {
@@ -110,6 +114,7 @@ const Checkout = () => {
                       type="text"
                       name="name"
                       id="name"
+                      required
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
                       />
@@ -121,6 +126,7 @@ const Checkout = () => {
                       type="email"
                       name="email"
                       id="email"
+                      required
                       value={customerEmail}
                       onChange={(e) => setCustomerEmail(e.target.value)}
                       />
@@ -133,6 +139,7 @@ const Checkout = () => {
                       type="text"
                       name="document"
                       id="document"
+                      required
                       value={customerDocument}
                       onChange={(e) => setCustomerDocument(e.target.value)}
                       />
@@ -145,6 +152,7 @@ const Checkout = () => {
                       type="text"
                       name="mobile"
                       id="mobile"
+                      required
                       value={customerMobile}
                       onChange={(e) => setCustomerMobile(e.target.value)}
                       />
@@ -153,14 +161,13 @@ const Checkout = () => {
                     <div className='label-input'>
                       <label htmlFor="zipcode">CEP</label>
                       <InputMask
-                      {...register("billingZipCode")}
                       mask="99999-999"
                       type="text"
                       name="zipcode"
                       id="zipcode"
+                      required
                       value={billingZipCode}
                       onChange={(e) => setBillingZipCode(e.target.value)}
-                      
                       onBlur={handleBuscaCep}
                       />
                     </div>
@@ -168,23 +175,22 @@ const Checkout = () => {
                     <div className='label-input'>
                       <label htmlFor="address">Endereço</label>
                       <input
-                      {...register("billingAddress")}
                       type="text"
                       name="address"
                       id="address"
+                      required
                       value={billingAddress}
                       onChange={(e) => setBillingAddress(e.target.value)}
-                      
                       />
                     </div>
                     <div className='englobe'>
-
                       <div className='label-input'>
                         <label htmlFor="number">Número</label>
                         <input
                         type="text"
                         name="number"
                         id="number"
+                        required
                         value={billingNumber}
                         onChange={(e) => setBillingNumber(e.target.value)}
                         
@@ -194,10 +200,10 @@ const Checkout = () => {
                       <div className='label-input'>
                         <label htmlFor="neighborhood">Bairro</label>
                         <input
-                        {...register("billingNeighborhood")}
                         type="text"
                         name="neighborhood"
                         id="neighborhood"
+                        required
                         value={billingNeighborhood}
                         onChange={(e) => setBillingNeighborhood(e.target.value)}
                         
@@ -211,9 +217,9 @@ const Checkout = () => {
                     <label htmlFor="city">Cidade</label>
                     <input
                     type="text"
-                    {...register("billingCity")}
                     name="city"
                     id="city"
+                    required
                     value={billingCity}
                     onChange={(e) => setBillingCity(e.target.value)}
                     
@@ -223,9 +229,9 @@ const Checkout = () => {
                   <div className='label-input'>
                     <label htmlFor="state">Estado</label>
                     <select
-                    {...register("billingState")}
                     name="state"
                     id="state"
+                    required
                     value={billingState}
                     onChange={(e) => setBillingState(e.target.value)}>
                       <option>Selecione</option>
