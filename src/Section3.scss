@@ -171,7 +171,142 @@
 
 
 @media screen and ( max-width: 720px) {
+  .center_shapes{
+    padding: 120px 0;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    
+  //tamanho dos 3 sahpes
   .shape{
-    width: 100% !important;
+    position: relative;
+    opacity: 1;
+    width: 90%;
+    height: 400px;
+    margin: 0 5%;
+    box-shadow: 10px 15px 8px black;
+    transition: 0.5s;
+    border-radius: 5px;
   }
+  
+.shape1{
+    background-image: url("./assets/images/shape1_img.png");
+    opacity: 1;
+    animation: imgs 1000ms ease-out 0ms 1 normal forwards;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+ .shape2{
+    background-image: url("./assets/images/shape2_img.png");
+    opacity: 1;
+    animation: imgs 1000ms ease-out 0ms 1 normal forwards;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+ .shape3{
+    background-image: url("./assets/images/shape3_img.png");
+    opacity: 1;
+    animation: imgs 1000ms ease-out 0ms 1 normal forwards;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+
+    .shape_txt1{
+      display: none;
+      opacity: 1;
+      background: radial-gradient(#0e0e0e, #070606);
+      text-align: center;
+      transform: rotateY('180deg');
+      height: 700px;
+  
+
+      p{
+        opacity: 0;
+        color: white;
+        font-size: 10px;
+        padding: 50px 30px;
+        animation: txt 1000ms ease-out 400ms 1 normal forwards;
+        line-height: 1.5em;
+        letter-spacing: 0.5px;
+      }
+
+    }
+    .shape_txt2{
+      display: none;
+      
+      opacity: 1;
+      background: radial-gradient(#0e0e0e, #070606);
+      text-align: center;
+      transform: rotateY('180deg');
+      height: 700px;
+
+      p{
+        opacity: 0;
+        color: white;
+        font-size: 12px;
+        padding: 50px 30px;
+        animation: txt 1000ms ease-out 400ms 1 normal forwards;
+        line-height: 1.5em;
+        letter-spacing: 0.5px;
+      }
+  
+    }
+    .shape_txt3{
+      display: none;
+      opacity: 1;
+      background: radial-gradient(#0e0e0e, #070606);
+      text-align: center;
+      transform: rotateY('180deg');
+      height: 700px;
+
+      p{
+        opacity: 0;
+        color: white;
+        font-size: 11px;
+        padding: 50px 30px;
+        animation: txt 1000ms ease-out 400ms 1 normal forwards;
+        line-height: 1.5em;
+        letter-spacing: 0.5px;
+      }
+  
+     
+    }
+  // botao
+      .contentOne_btn{
+        position: relative;
+        font-family: "montserrat";
+        text-decoration: none;
+        background-image: linear-gradient(90deg, #f46626, #cf2700);
+        color: black;
+        padding: 18px 40px;
+        overflow: hidden;
+        font-weight:bold;
+        top: -25px;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select:none;
+        border: none;
+        box-shadow: 2px 2px 7px black;
+        font-size: 15px;
+      }
+      .contentOne_btn:hover{
+        background-color: #00000080;
+        background-image: none;
+        backdrop-filter: blur(2px);
+        color: #cf2700;
+        
+      }
+      .contentOne_btn:not(:hover){
+        transition: 0.3s;
+        background-image: linear-gradient(90deg, #f46626, #cf2700);
+        color: black;
+        
+      }
+  }
+
 }

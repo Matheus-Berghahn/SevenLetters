@@ -9,7 +9,7 @@ function Section1() {
     <div className="section1 max-width">
 
     <div className="contentOne_leftSide">
-      <h1><b>FisioFort:</b> a solução eficaz para aliviar dores musculares e articular</h1>
+      <h1><b>FisioFort:</b> a solução eficaz para aliviar dores musculares</h1>
       <p>A pomada muscular é a solução perfeita para aliviar a dor e a tensão nos músculos e articulações. Com uma fórmula potente e eficaz, ela penetra profundamente na pele para aliviar a dor e a inflamação, deixando seus músculos e articulações se sentindo relaxados e rejuvenescidos. Além disso, a pomada é fácil de usar e pode ser aplicada diretamente na área afetada, sem sujar as suas mãos. Experimente hoje e sinta a diferença em seus músculos e articulações. Adquira já a sua pomada muscular!
       </p>
 

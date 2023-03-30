@@ -69,3 +69,25 @@
 
   
 }
+
+
+@media screen and ( max-width: 720px) {
+  .txt_parallax h2 {
+    font-size: 20px;
+  }
+
+  .contentTree_middle{
+    transform: translate(0%,0%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .contentTree_btn{
+      width: 50% !important;
+      font-size: 12px;
+
+    }
+  }
+  
+}
