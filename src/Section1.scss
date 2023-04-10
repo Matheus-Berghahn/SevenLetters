@@ -1,6 +1,7 @@
 .section1{
   display: flex;
   flex-wrap: wrap;
+  padding-top: 200px;
 
   .contentOne_leftSide {
     width: 70%;
@@ -151,6 +152,7 @@
   .section1{
     flex-direction: column-reverse;
     overflow: hidden;
+    padding-top: 150px;
   }
   h1{
     text-align: left;

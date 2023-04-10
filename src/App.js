@@ -1,6 +1,5 @@
 import './App.scss';
 import './Header.scss';
-import Header from './Header';
 import ContentMain from './ContentMain';
 import Checkout from './Checkout';
 
@@ -19,7 +18,6 @@ const App = () => {
 
   return (
     <div>
-      <Header />
       <div className='content'>
         <div className='app'>
           <Component/>

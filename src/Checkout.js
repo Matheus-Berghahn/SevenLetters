@@ -1,4 +1,6 @@
 import './Checkout.scss';
+import Footer from './Footer';
+import HeaderCheckout from './HeaderCheckout';
 import cardsAcepts from "./assets/images/cards.png";
 
 import React, { useState } from "react";
@@ -49,8 +51,6 @@ const Checkout = () => {
       setValue(prevRegister => ({...prevRegister, [billingAddress]: data.logradouro, [billingCity]: data.localidade, [billingState]: data.uf, [billingNeighborhood]: data.bairro}));
     })
   };
-
-  console.log(register)
   
   
    //
@@ -100,6 +100,14 @@ const Checkout = () => {
        
         return(
           <>
+        <HeaderCheckout />
+
+
+
+
+
+
+
           <form className="form" onSubmit={handleSubmit}>
             <div className='form-payment'>
               <div className='main-form'>
@@ -356,6 +364,7 @@ const Checkout = () => {
               </div>
             </div>
           </form>
+          <Footer/>
           </>
           )
          

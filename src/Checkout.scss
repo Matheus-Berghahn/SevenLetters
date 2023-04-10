@@ -1,6 +1,5 @@
 .form{
   padding-top: -200px;
-  padding-bottom: 200px;
   .form-payment{
     display: flex;
     justify-content: center;
@@ -8,7 +7,7 @@
       width: 100%;
       background-color: white;
       border: 0px;
-      padding: 2% 15%;
+      padding: 7% 0%;
       gap: 40px;
       justify-content: center;
       display: flex;
@@ -20,6 +19,8 @@
         gap: 10px;
       }
       .billing-form{
+        max-width: 500px;
+        min-width: 360px;
         width: 30%;
         box-shadow: 5px 10px 18px #727272;
         padding: 2%;
@@ -34,6 +35,8 @@
 
       .payment-form{
         position: relative;
+        max-width: 500px;
+        min-width: 360px;
         width: 30%;
         box-shadow: 5px 10px 18px #727272;
         padding: 2%;
@@ -71,7 +74,7 @@
           padding-bottom: 5px;
         }
         input, select{
-          height: 30px;
+          height: 45px;
           border-radius: 5px;
           padding: 0 5%;
           border: 1px solid black;
@@ -99,7 +102,7 @@
 
 @media only screen and (max-width: 767px){
   .main-form{
-    padding: 2% 2% !important;
+    padding: 40% 2% !important;
     .billing-form{
       width: 100% !important;
       padding: 7% !important;

@@ -57,10 +57,8 @@ function Header() {
           <img src={LogoHeader} alt="LIVRO 1"/>
         </div>
         <div className="header-right">
-          <p onClick={scrollToClasseDeDestino} style={{display: shapeState.shape1}} className="faq">FAQ</p>
           <div className='middle'>
-            <a href='/checkout' className='btn btn1 btn_comprar'>COMPRAR</a>
-          </div>
+            <a href='/' className='btn btn1 btn_comprar'>VOLTAR</a> </div>
         </div>
       </div>
     </header>
