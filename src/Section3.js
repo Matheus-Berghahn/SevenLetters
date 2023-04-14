@@ -97,7 +97,7 @@ function Section3() {
     <div className="section3">
     <div id="ancor_shapes"  className="center_shapes">
 
-      <div>
+      <div className='shape_padding'>
         <div ref={txt1} onClick={clickbutton1} className="shape shape_txt1">
           <p><b>Arnica:</b> A Arnica é uma planta medicinal que possui propriedades anti-inflamatórias e analgésicas. É comumente usada em pomadas e géis para aliviar dores musculares, contusões e inflamações.<br></br><br></br>
 
@@ -117,7 +117,7 @@ function Section3() {
         <button onClick={clickbutton1}   ref={botaoAtivadorRef1} className='contentOne_btn'>Componentes</button>
       </div>
 
-      <div>
+      <div className='shape_padding'>
       <div ref={txt2} onClick={clickbutton2} className="shape shape_txt2">
           <p>Somente para uso externo. Não aplicar próximo a mucosas, olhos e/ou em locais onde a pele estiver lesionada ou irritada. Não inalar. Nunca ingerir. Se houver irritação, descontinuar o uso e procurar orientação médica.<br></br><br></br>
           
@@ -135,7 +135,7 @@ Por fim, a pomada deve ser mantida em sua embalagem original e não deve ser uti
         <button  onClick={clickbutton2}   ref={botaoAtivadorRef2} className='contentOne_btn'>Restrições</button>
       </div>
 
-      <div>
+      <div className='shape_padding'>
       <div ref={txt3} onClick={clickbutton3} className="shape shape_txt3">
   
           <p>Ela é indicada para uso tópico em áreas do corpo que apresentam desconforto muscular, como nas costas, pernas, braços e pescoço entre outros.<br></br><br></br>

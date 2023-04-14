@@ -17,7 +17,7 @@ function Section5() {
 
   return (
     <div className="section5">
-      <Parallax  className="bg_parallax" bgImage={ shape2 } strength={500}>
+      <Parallax  className="bg_parallax" bgImage={ shape2 } strength={800}>
       <div className="txt_parallax">
           <h2>Ficou com alguma dúvida?</h2>
 
