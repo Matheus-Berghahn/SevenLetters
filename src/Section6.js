@@ -37,18 +37,18 @@ function Section6() {
       <div><h2 className="title">Perguntas frequentes</h2></div>
       {renderAccordionItem(
         0,
-        "O que são pomadas musculares?",
-        "As pomadas musculares são medicamentos tópicos que são aplicados na pele para aliviar a dor muscular, a inflamação e a rigidez. Elas contêm ingredientes ativos que penetram na pele e atuam nos músculos e articulações para aliviar a dor e a inflamação."
+        "Como funciona a forma de pagamento?",
+        "A forma de pagamento utilizada é através do Pagar.me, que é um serviço de processamento de pagamentos online. O pagamento é feito apenas com cartão de crédito e é considerado seguro. O processo de pagamento ocorre da seguinte maneira: o comprador insere os dados do cartão de crédito, que são criptografados e enviados para o Pagar.me, que realiza a autorização e a captura do valor da transação."
       )}
       {renderAccordionItem(
         1,
-        "Como as pomadas musculares funcionam?",
-        "As pomadas musculares contêm ingredientes ativos, como salicilato de metila, cânfora, mentol, diclofenaco e ibuprofeno, que têm propriedades analgésicas e anti-inflamatórias. Esses ingredientes penetram na pele e atuam nos receptores de dor para aliviar a dor muscular e reduzir a inflamação."
+        "Como vou receber meu produto?",
+        "Você receberá seu produto através de um e-mail contendo as informações necessárias para acessá-lo. Por se tratar de um produto digital, não é necessário envio físico ou entrega em mãos, o que torna o processo mais rápido e conveniente. Verifique a caixa de entrada do e-mail que você informou no momento da compra para ter acesso ao seu produto. Certifique-se de verificar também a pasta de spam, caso não localize o e-mail na caixa de entrada."
       )}
       {renderAccordionItem(
         2,
-        "Quais são os tipos de pomadas musculares disponíveis?",
-        "Existem vários tipos de pomadas musculares disponíveis, incluindo pomadas com analgésicos, pomadas com anti-inflamatórios, pomadas com relaxantes musculares e pomadas com uma combinação desses ingredientes."
+        "O que é um produto digital?",
+        "Um produto digital é um item virtual que pode ser baixado, acessado ou entregue por meio eletrônico, como por exemplo um e-book, um software, uma música ou um curso online. Normalmente, após a compra, o comprador recebe um link de download ou o arquivo digital diretamente em seu e-mail. Diferentemente de produtos físicos, produtos digitais não precisam ser armazenados em estoque e podem ser vendidos ilimitadas vezes sem a necessidade de reabastecimento. Eles são uma opção econômica e ecologicamente consciente, já que não geram desperdício de material e não requerem gastos com logística de transporte."
       )}
       {renderAccordionItem(
         3,
