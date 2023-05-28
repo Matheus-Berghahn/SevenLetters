@@ -14,7 +14,7 @@ O que você precisa para instalar a aplicação:
 
 ### Instalação
 
-1. Clone o repositório: `git clone https://github.com/seu-usuario/pageDropshipping.git`
+1. Clone o repositório: `git clone https://github.com/Matheus-Berghahn/SevenLetters.git`
 2. Entre na pasta do projeto: `cd pageDropshipping`
 3. Instale as dependências: `yarn` ou `npm install`
 4. Inicie a aplicação: `yarn start` ou `npm start`
@@ -27,7 +27,6 @@ O que você precisa para instalar a aplicação:
 
 ## Autor
 
-- Gregore Gomes - [Perfil no GitHub](https://github.com/GregoreGomes)
 - Mathues Berghahn - [Perfil no GitHub](https://github.com/Matheus-Berghahn)
 
 ## Licença
